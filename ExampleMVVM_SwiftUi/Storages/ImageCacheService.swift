@@ -1,8 +1,6 @@
 import Foundation
 import SDWebImage
 
-//typealias ImageData = (UIImage, Int)
-
 // MARK: - Protocols
 
 protocol ImageCaching: AnyObject {

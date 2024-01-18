@@ -1,6 +1,16 @@
 import Foundation
 import UIKit
 
+protocol ImageLoadable {
+    func loadImagesFromCache(_ ids: [Int]) async throws -> [UIImage]
+}
+
+protocol ImageDetailsFetchable {
+    func fetchImageDetails() async
+}
+
+// MARK: - HomeViewModel Class
+
 @MainActor
 final class HomeViewModel: ObservableObject {
     
@@ -16,12 +26,17 @@ final class HomeViewModel: ObservableObject {
         self.imageCacheService = imageCacheService
         self.ids = ids
     }
+}
+
+// MARK: - ImageDetailsFetchable Extension
+
+extension HomeViewModel: ImageDetailsFetchable {
     
     func fetchImageDetails() async {
         isLoading = true
         do {
             let imageData = try await loadImagesFromCache(ids)
-              
+            
             self.dataSource = imageData
             self.isLoading = false
         } catch(let error) {
@@ -30,8 +45,13 @@ final class HomeViewModel: ObservableObject {
             self.errorMassage = error.localizedDescription
         }
     }
+}
+
+// MARK: - ImageLoadable Extension
+
+extension HomeViewModel: ImageLoadable {
     
-    private func loadImagesFromCache(_ ids: [Int]) async throws -> [UIImage] {
+    func loadImagesFromCache(_ ids: [Int]) async throws -> [UIImage] {
         var images = [UIImage]()
         
         try await withThrowingTaskGroup(of: UIImage.self) { group in

@@ -74,10 +74,18 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		39A14A012B59216A00AA25BF = {
+		395938DC2B59B77A00EABBC6 /* DI */ = {
 			isa = PBXGroup;
 			children = (
 				395938DA2B59B36300EABBC6 /* DIContainer.swift */,
+			);
+			name = DI;
+			sourceTree = "<group>";
+		};
+		39A14A012B59216A00AA25BF = {
+			isa = PBXGroup;
+			children = (
+				395938DC2B59B77A00EABBC6 /* DI */,
 				39A14A0C2B59216A00AA25BF /* ExampleMVVM_SwiftUi */,
 				39A14A0B2B59216A00AA25BF /* Products */,
 			);

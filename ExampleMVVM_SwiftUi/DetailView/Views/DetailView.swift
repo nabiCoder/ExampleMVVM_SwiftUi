@@ -9,7 +9,6 @@ struct DetailView: View {
 }
 
 private extension DetailView {
-    
     func displayImageDetail(uiImage: UIImage) -> some View {
         Image(uiImage: uiImage)
             .resizable()

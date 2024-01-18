@@ -10,7 +10,6 @@ struct ResizableView: View {
 }
 
 private extension ResizableView {
-    
     func displayResizedImage(uiImage: UIImage) -> some View {
         Image(uiImage: image)
             .resizable()

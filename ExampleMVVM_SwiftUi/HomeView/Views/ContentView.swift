@@ -8,7 +8,6 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
             ScrollView(.vertical) {
                 ImageGrid(columns: columns, images: viewModel.dataSource)
                     .navigationTitle(Resources.ViewTitles.home)
@@ -19,6 +18,9 @@ struct ContentView: View {
             if viewModel.isLoading {
                 LoadingView()
             }
+        }
+        .alert(isPresented: $viewModel.isError) {
+            return Alert(title: Text("Error"), message: Text(viewModel.errorMassage ?? ""))
         }
     }
 }
