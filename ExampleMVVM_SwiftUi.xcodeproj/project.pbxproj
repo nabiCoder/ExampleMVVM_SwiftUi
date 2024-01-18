@@ -14,6 +14,7 @@
 		39A14A1F2B59257700AA25BF /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A1E2B59257700AA25BF /* EndPoint.swift */; };
 		39A14A212B5925CE00AA25BF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A202B5925CE00AA25BF /* NetworkError.swift */; };
 		39A14A232B59261000AA25BF /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A222B59261000AA25BF /* NetworkDataFetch.swift */; };
+		39A14A262B59267200AA25BF /* URLSession + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A252B59267200AA25BF /* URLSession + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		39A14A1E2B59257700AA25BF /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		39A14A202B5925CE00AA25BF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		39A14A222B59261000AA25BF /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
+		39A14A252B59267200AA25BF /* URLSession + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,8 @@
 			children = (
 				39A14A1B2B59230400AA25BF /* Application */,
 				39A14A0F2B59216A00AA25BF /* ContentView.swift */,
+				39A14A1D2B59254200AA25BF /* Networks */,
+				39A14A242B59265500AA25BF /* Extensions */,
 				39A14A1C2B59248700AA25BF /* SupportingFiles */,
 				39A14A132B59216B00AA25BF /* Preview Content */,
 			);
@@ -76,7 +80,6 @@
 		39A14A1B2B59230400AA25BF /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				39A14A1D2B59254200AA25BF /* Networks */,
 				39A14A0D2B59216A00AA25BF /* MyApp.swift */,
 			);
 			path = Application;
@@ -98,6 +101,14 @@
 				39A14A222B59261000AA25BF /* NetworkDataFetch.swift */,
 			);
 			path = Networks;
+			sourceTree = "<group>";
+		};
+		39A14A242B59265500AA25BF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				39A14A252B59267200AA25BF /* URLSession + Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 			files = (
 				39A14A1F2B59257700AA25BF /* EndPoint.swift in Sources */,
 				39A14A212B5925CE00AA25BF /* NetworkError.swift in Sources */,
+				39A14A262B59267200AA25BF /* URLSession + Extension.swift in Sources */,
 				39A14A102B59216A00AA25BF /* ContentView.swift in Sources */,
 				39A14A0E2B59216A00AA25BF /* MyApp.swift in Sources */,
 				39A14A232B59261000AA25BF /* NetworkDataFetch.swift in Sources */,
