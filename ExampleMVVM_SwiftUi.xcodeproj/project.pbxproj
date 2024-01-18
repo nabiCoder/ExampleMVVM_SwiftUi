@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		39A14A0E2B59216A00AA25BF /* MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A0D2B59216A00AA25BF /* MyApp.swift */; };
-		39A14A102B59216A00AA25BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A0F2B59216A00AA25BF /* ContentView.swift */; };
 		39A14A122B59216B00AA25BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A14A112B59216B00AA25BF /* Assets.xcassets */; };
 		39A14A152B59216B00AA25BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A14A142B59216B00AA25BF /* Preview Assets.xcassets */; };
 		39A14A1F2B59257700AA25BF /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A1E2B59257700AA25BF /* EndPoint.swift */; };
@@ -17,12 +16,12 @@
 		39A14A262B59267200AA25BF /* URLSession + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A252B59267200AA25BF /* URLSession + Extension.swift */; };
 		39A14A2E2B59282A00AA25BF /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A2D2B59282A00AA25BF /* ImageDetails.swift */; };
 		39A14A302B5928CD00AA25BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A2F2B5928CD00AA25BF /* HomeViewModel.swift */; };
+		39A14A322B59299600AA25BF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A312B59299600AA25BF /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39A14A0A2B59216A00AA25BF /* ExampleMVVM_SwiftUi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleMVVM_SwiftUi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A14A0D2B59216A00AA25BF /* MyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApp.swift; sourceTree = "<group>"; };
-		39A14A0F2B59216A00AA25BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		39A14A112B59216B00AA25BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39A14A142B59216B00AA25BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		39A14A1E2B59257700AA25BF /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -31,6 +30,7 @@
 		39A14A252B59267200AA25BF /* URLSession + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession + Extension.swift"; sourceTree = "<group>"; };
 		39A14A2D2B59282A00AA25BF /* ImageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
 		39A14A2F2B5928CD00AA25BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		39A14A312B59299600AA25BF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,6 @@
 				39A14A2B2B59271600AA25BF /* DetailScene */,
 				39A14A272B5926CB00AA25BF /* HomeView */,
 				39A14A1B2B59230400AA25BF /* Application */,
-				39A14A0F2B59216A00AA25BF /* ContentView.swift */,
 				39A14A1D2B59254200AA25BF /* Networks */,
 				39A14A242B59265500AA25BF /* Extensions */,
 				39A14A1C2B59248700AA25BF /* SupportingFiles */,
@@ -138,6 +137,7 @@
 		39A14A292B5926EB00AA25BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				39A14A312B59299600AA25BF /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,12 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A14A322B59299600AA25BF /* HomeView.swift in Sources */,
 				39A14A1F2B59257700AA25BF /* EndPoint.swift in Sources */,
 				39A14A2E2B59282A00AA25BF /* ImageDetails.swift in Sources */,
 				39A14A212B5925CE00AA25BF /* NetworkError.swift in Sources */,
 				39A14A302B5928CD00AA25BF /* HomeViewModel.swift in Sources */,
 				39A14A262B59267200AA25BF /* URLSession + Extension.swift in Sources */,
-				39A14A102B59216A00AA25BF /* ContentView.swift in Sources */,
 				39A14A0E2B59216A00AA25BF /* MyApp.swift in Sources */,
 				39A14A232B59261000AA25BF /* NetworkDataFetch.swift in Sources */,
 			);
