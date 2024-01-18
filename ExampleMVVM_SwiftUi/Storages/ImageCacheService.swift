@@ -1,6 +1,8 @@
 import Foundation
 import SDWebImage
 
+//typealias ImageData = (UIImage, Int)
+
 // MARK: - Protocols
 
 protocol ImageCaching: AnyObject {
@@ -60,7 +62,7 @@ extension ImageCacheService: ImageFetcher {
     func fetchImage(id: Int) async throws -> UIImage {
         do {
             let imageData = try await NetworkDataFetch.getData(id: id)
-            return try await downloadAndCacheImage(image: imageData, key: String(id))
+            return try await downloadAndCacheImage(image: imageData, key: id)
         } catch {
             throw NetworkError.urlError
         }
@@ -70,7 +72,7 @@ extension ImageCacheService: ImageFetcher {
 // MARK: - DownloadAndCacheImage method
 
 private extension ImageCacheService {
-    func downloadAndCacheImage(image: ImageDetails, key: String) async throws -> UIImage {
+    func downloadAndCacheImage(image: ImageDetails, key: Int) async throws -> UIImage {
         guard let imageURL = URL(string: image.url) else {
             throw NetworkError.canNotParseData
         }
@@ -87,7 +89,7 @@ private extension ImageCacheService {
                     },
                     completed: { image, _, _, _, _, _ in
                         if let downloadedImage = image {
-                            self.storeImage(downloadedImage, forKey: key)
+                            self.storeImage(downloadedImage, forKey: String(key))
                             self.userDefaults.set(Date(), forKey: self.lastUpdateKey)
                             
                             continuation.resume(returning: downloadedImage)

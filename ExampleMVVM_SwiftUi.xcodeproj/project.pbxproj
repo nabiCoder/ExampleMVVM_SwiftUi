@@ -13,6 +13,8 @@
 		395938D12B5957F000EABBC6 /* ImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395938D02B5957F000EABBC6 /* ImageGrid.swift */; };
 		395938D32B59580D00EABBC6 /* ResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395938D22B59580D00EABBC6 /* ResizableView.swift */; };
 		395938D52B59582100EABBC6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395938D42B59582100EABBC6 /* LoadingView.swift */; };
+		395938D92B59AF2200EABBC6 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395938D82B59AF2200EABBC6 /* UIImage + Extension.swift */; };
+		395938DB2B59B36300EABBC6 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395938DA2B59B36300EABBC6 /* DIContainer.swift */; };
 		39A14A0E2B59216A00AA25BF /* MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A0D2B59216A00AA25BF /* MyApp.swift */; };
 		39A14A122B59216B00AA25BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A14A112B59216B00AA25BF /* Assets.xcassets */; };
 		39A14A152B59216B00AA25BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A14A142B59216B00AA25BF /* Preview Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		395938D02B5957F000EABBC6 /* ImageGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGrid.swift; sourceTree = "<group>"; };
 		395938D22B59580D00EABBC6 /* ResizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableView.swift; sourceTree = "<group>"; };
 		395938D42B59582100EABBC6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		395938D82B59AF2200EABBC6 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
+		395938DA2B59B36300EABBC6 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		39A14A0A2B59216A00AA25BF /* ExampleMVVM_SwiftUi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleMVVM_SwiftUi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A14A0D2B59216A00AA25BF /* MyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApp.swift; sourceTree = "<group>"; };
 		39A14A112B59216B00AA25BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 		39A14A012B59216A00AA25BF = {
 			isa = PBXGroup;
 			children = (
+				395938DA2B59B36300EABBC6 /* DIContainer.swift */,
 				39A14A0C2B59216A00AA25BF /* ExampleMVVM_SwiftUi */,
 				39A14A0B2B59216A00AA25BF /* Products */,
 			);
@@ -89,9 +94,9 @@
 		39A14A0C2B59216A00AA25BF /* ExampleMVVM_SwiftUi */ = {
 			isa = PBXGroup;
 			children = (
+				39A14A1B2B59230400AA25BF /* Application */,
 				39A14A2B2B59271600AA25BF /* DetailView */,
 				39A14A272B5926CB00AA25BF /* HomeView */,
-				39A14A1B2B59230400AA25BF /* Application */,
 				39A14A1D2B59254200AA25BF /* Networks */,
 				39A14A332B592A8000AA25BF /* Storages */,
 				39A14A242B59265500AA25BF /* Extensions */,
@@ -140,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				39A14A252B59267200AA25BF /* URLSession + Extension.swift */,
+				395938D82B59AF2200EABBC6 /* UIImage + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 				395938CF2B59579900EABBC6 /* ContentView.swift in Sources */,
 				39A14A2E2B59282A00AA25BF /* ImageDetails.swift in Sources */,
 				395938CA2B594D7100EABBC6 /* DetailView.swift in Sources */,
+				395938DB2B59B36300EABBC6 /* DIContainer.swift in Sources */,
 				39A14A212B5925CE00AA25BF /* NetworkError.swift in Sources */,
 				395938D32B59580D00EABBC6 /* ResizableView.swift in Sources */,
 				39A14A302B5928CD00AA25BF /* HomeViewModel.swift in Sources */,
@@ -296,6 +303,7 @@
 				39A14A0E2B59216A00AA25BF /* MyApp.swift in Sources */,
 				395938D12B5957F000EABBC6 /* ImageGrid.swift in Sources */,
 				395938CD2B594ECB00EABBC6 /* Resources.swift in Sources */,
+				395938D92B59AF2200EABBC6 /* UIImage + Extension.swift in Sources */,
 				39A14A232B59261000AA25BF /* NetworkDataFetch.swift in Sources */,
 				39A14A352B592AAE00AA25BF /* ImageCacheService.swift in Sources */,
 			);

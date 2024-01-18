@@ -4,13 +4,18 @@ import UIKit
 @MainActor
 final class HomeViewModel: ObservableObject {
     
-    private var imageCacheService = ImageCacheService()
-    private let ids = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    private var imageCacheService: ImageCacheService
+    private let ids: [Int]
     
     @Published var dataSource: [UIImage]?
     @Published var isLoading = false
     @Published var isError = false
     @Published var errorMassage: String?
+    
+    init(imageCacheService: ImageCacheService, ids: [Int]) {
+        self.imageCacheService = imageCacheService
+        self.ids = ids
+    }
     
     func fetchImageDetails() async {
         isLoading = true
@@ -19,7 +24,6 @@ final class HomeViewModel: ObservableObject {
               
             self.dataSource = imageData
             self.isLoading = false
-            
         } catch(let error) {
             self.isLoading = false
             self.isError = true
