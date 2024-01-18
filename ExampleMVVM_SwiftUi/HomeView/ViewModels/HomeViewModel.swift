@@ -1,9 +1,13 @@
 import Foundation
+import UIKit
 
 @MainActor
 final class HomeViewModel: ObservableObject {
     
-    @Published var dataSource: [ImageDetails]?
+    private var imageCacheService = ImageCacheService()
+    private let ids = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    @Published var dataSource: [UIImage]?
     @Published var isLoading = false
     @Published var isError = false
     @Published var errorMassage: String?
@@ -11,7 +15,7 @@ final class HomeViewModel: ObservableObject {
     func fetchImageDetails() async {
         isLoading = true
         do {
-            let imageData = try await loadImages([1, 2, 3, 4, 5, 6, 7, 8, 9])
+            let imageData = try await loadImagesFromCache(ids)
               
             self.dataSource = imageData
             self.isLoading = false
@@ -23,13 +27,13 @@ final class HomeViewModel: ObservableObject {
         }
     }
     
-    private func loadImages(_ ids: [Int]) async throws -> [ImageDetails] {
-        var images = [ImageDetails]()
+    private func loadImagesFromCache(_ ids: [Int]) async throws -> [UIImage] {
+        var images = [UIImage]()
         
-        try await withThrowingTaskGroup(of: ImageDetails.self) { group in
+        try await withThrowingTaskGroup(of: UIImage.self) { group in
             for id in ids {
                 group.addTask {
-                    return try await NetworkDataFetch.getData(id: id)
+                    return try await self.imageCacheService.loadImage(with: id)
                 }
             }
             

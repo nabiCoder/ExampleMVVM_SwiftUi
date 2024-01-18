@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		395938CA2B594D7100EABBC6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395938C92B594D7100EABBC6 /* DetailView.swift */; };
+		395938CD2B594ECB00EABBC6 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395938CC2B594ECB00EABBC6 /* Resources.swift */; };
+		395938CF2B59579900EABBC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395938CE2B59579900EABBC6 /* ContentView.swift */; };
+		395938D12B5957F000EABBC6 /* ImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395938D02B5957F000EABBC6 /* ImageGrid.swift */; };
+		395938D32B59580D00EABBC6 /* ResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395938D22B59580D00EABBC6 /* ResizableView.swift */; };
+		395938D52B59582100EABBC6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395938D42B59582100EABBC6 /* LoadingView.swift */; };
 		39A14A0E2B59216A00AA25BF /* MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A0D2B59216A00AA25BF /* MyApp.swift */; };
 		39A14A122B59216B00AA25BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A14A112B59216B00AA25BF /* Assets.xcassets */; };
 		39A14A152B59216B00AA25BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39A14A142B59216B00AA25BF /* Preview Assets.xcassets */; };
@@ -17,9 +23,18 @@
 		39A14A2E2B59282A00AA25BF /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A2D2B59282A00AA25BF /* ImageDetails.swift */; };
 		39A14A302B5928CD00AA25BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A2F2B5928CD00AA25BF /* HomeViewModel.swift */; };
 		39A14A322B59299600AA25BF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A312B59299600AA25BF /* HomeView.swift */; };
+		39A14A352B592AAE00AA25BF /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A342B592AAE00AA25BF /* ImageCacheService.swift */; };
+		39A14A382B592B9D00AA25BF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 39A14A372B592B9D00AA25BF /* SDWebImage */; };
+		39A14A3A2B592B9D00AA25BF /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 39A14A392B592B9D00AA25BF /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		395938C92B594D7100EABBC6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		395938CC2B594ECB00EABBC6 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		395938CE2B59579900EABBC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		395938D02B5957F000EABBC6 /* ImageGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGrid.swift; sourceTree = "<group>"; };
+		395938D22B59580D00EABBC6 /* ResizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableView.swift; sourceTree = "<group>"; };
+		395938D42B59582100EABBC6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		39A14A0A2B59216A00AA25BF /* ExampleMVVM_SwiftUi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleMVVM_SwiftUi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39A14A0D2B59216A00AA25BF /* MyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApp.swift; sourceTree = "<group>"; };
 		39A14A112B59216B00AA25BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,6 +46,7 @@
 		39A14A2D2B59282A00AA25BF /* ImageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
 		39A14A2F2B5928CD00AA25BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		39A14A312B59299600AA25BF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		39A14A342B592AAE00AA25BF /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,12 +54,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A14A3A2B592B9D00AA25BF /* SDWebImageMapKit in Frameworks */,
+				39A14A382B592B9D00AA25BF /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		395938CB2B594E8500EABBC6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				395938CC2B594ECB00EABBC6 /* Resources.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		39A14A012B59216A00AA25BF = {
 			isa = PBXGroup;
 			children = (
@@ -63,11 +89,13 @@
 		39A14A0C2B59216A00AA25BF /* ExampleMVVM_SwiftUi */ = {
 			isa = PBXGroup;
 			children = (
-				39A14A2B2B59271600AA25BF /* DetailScene */,
+				39A14A2B2B59271600AA25BF /* DetailView */,
 				39A14A272B5926CB00AA25BF /* HomeView */,
 				39A14A1B2B59230400AA25BF /* Application */,
 				39A14A1D2B59254200AA25BF /* Networks */,
+				39A14A332B592A8000AA25BF /* Storages */,
 				39A14A242B59265500AA25BF /* Extensions */,
+				395938CB2B594E8500EABBC6 /* Resources */,
 				39A14A1C2B59248700AA25BF /* SupportingFiles */,
 				39A14A132B59216B00AA25BF /* Preview Content */,
 			);
@@ -138,6 +166,10 @@
 			isa = PBXGroup;
 			children = (
 				39A14A312B59299600AA25BF /* HomeView.swift */,
+				395938CE2B59579900EABBC6 /* ContentView.swift */,
+				395938D02B5957F000EABBC6 /* ImageGrid.swift */,
+				395938D22B59580D00EABBC6 /* ResizableView.swift */,
+				395938D42B59582100EABBC6 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,19 +182,28 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		39A14A2B2B59271600AA25BF /* DetailScene */ = {
+		39A14A2B2B59271600AA25BF /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
 				39A14A2C2B59272A00AA25BF /* Views */,
 			);
-			path = DetailScene;
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		39A14A2C2B59272A00AA25BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				395938C92B594D7100EABBC6 /* DetailView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		39A14A332B592A8000AA25BF /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				39A14A342B592AAE00AA25BF /* ImageCacheService.swift */,
+			);
+			path = Storages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +222,10 @@
 			dependencies = (
 			);
 			name = ExampleMVVM_SwiftUi;
+			packageProductDependencies = (
+				39A14A372B592B9D00AA25BF /* SDWebImage */,
+				39A14A392B592B9D00AA25BF /* SDWebImageMapKit */,
+			);
 			productName = ExampleMVVM_SwiftUi;
 			productReference = 39A14A0A2B59216A00AA25BF /* ExampleMVVM_SwiftUi.app */;
 			productType = "com.apple.product-type.application";
@@ -209,6 +254,9 @@
 				Base,
 			);
 			mainGroup = 39A14A012B59216A00AA25BF;
+			packageReferences = (
+				39A14A362B592B9D00AA25BF /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 39A14A0B2B59216A00AA25BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -237,12 +285,19 @@
 			files = (
 				39A14A322B59299600AA25BF /* HomeView.swift in Sources */,
 				39A14A1F2B59257700AA25BF /* EndPoint.swift in Sources */,
+				395938CF2B59579900EABBC6 /* ContentView.swift in Sources */,
 				39A14A2E2B59282A00AA25BF /* ImageDetails.swift in Sources */,
+				395938CA2B594D7100EABBC6 /* DetailView.swift in Sources */,
 				39A14A212B5925CE00AA25BF /* NetworkError.swift in Sources */,
+				395938D32B59580D00EABBC6 /* ResizableView.swift in Sources */,
 				39A14A302B5928CD00AA25BF /* HomeViewModel.swift in Sources */,
+				395938D52B59582100EABBC6 /* LoadingView.swift in Sources */,
 				39A14A262B59267200AA25BF /* URLSession + Extension.swift in Sources */,
 				39A14A0E2B59216A00AA25BF /* MyApp.swift in Sources */,
+				395938D12B5957F000EABBC6 /* ImageGrid.swift in Sources */,
+				395938CD2B594ECB00EABBC6 /* Resources.swift in Sources */,
 				39A14A232B59261000AA25BF /* NetworkDataFetch.swift in Sources */,
+				39A14A352B592AAE00AA25BF /* ImageCacheService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,8 +437,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,9 +446,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "nabi.ExampleMVVM-SwiftUi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -411,8 +469,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,9 +478,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "nabi.ExampleMVVM-SwiftUi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -448,6 +509,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		39A14A362B592B9D00AA25BF /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.18.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		39A14A372B592B9D00AA25BF /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39A14A362B592B9D00AA25BF /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		39A14A392B592B9D00AA25BF /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39A14A362B592B9D00AA25BF /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 39A14A022B59216A00AA25BF /* Project object */;
 }
