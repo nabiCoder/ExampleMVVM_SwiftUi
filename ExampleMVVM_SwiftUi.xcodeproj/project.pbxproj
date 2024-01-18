@@ -16,6 +16,7 @@
 		39A14A232B59261000AA25BF /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A222B59261000AA25BF /* NetworkDataFetch.swift */; };
 		39A14A262B59267200AA25BF /* URLSession + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A252B59267200AA25BF /* URLSession + Extension.swift */; };
 		39A14A2E2B59282A00AA25BF /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A2D2B59282A00AA25BF /* ImageDetails.swift */; };
+		39A14A302B5928CD00AA25BF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A2F2B5928CD00AA25BF /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		39A14A222B59261000AA25BF /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		39A14A252B59267200AA25BF /* URLSession + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession + Extension.swift"; sourceTree = "<group>"; };
 		39A14A2D2B59282A00AA25BF /* ImageDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
+		39A14A2F2B5928CD00AA25BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		39A14A282B5926D900AA25BF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				39A14A2F2B5928CD00AA25BF /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				39A14A1F2B59257700AA25BF /* EndPoint.swift in Sources */,
 				39A14A2E2B59282A00AA25BF /* ImageDetails.swift in Sources */,
 				39A14A212B5925CE00AA25BF /* NetworkError.swift in Sources */,
+				39A14A302B5928CD00AA25BF /* HomeViewModel.swift in Sources */,
 				39A14A262B59267200AA25BF /* URLSession + Extension.swift in Sources */,
 				39A14A102B59216A00AA25BF /* ContentView.swift in Sources */,
 				39A14A0E2B59216A00AA25BF /* MyApp.swift in Sources */,
