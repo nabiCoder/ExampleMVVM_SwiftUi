@@ -22,6 +22,7 @@ final class HomeViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var isError = false
     @Published var errorMassage: String?
+    @Published var hasLoadedData = false
     
     init(imageCacheService: ImageCacheService, ids: [Int]) {
         self.imageCacheService = imageCacheService
@@ -34,12 +35,14 @@ final class HomeViewModel: ObservableObject {
 extension HomeViewModel: ImageDetailsFetchable {
     
     func fetchImageDetails() async {
+        guard !hasLoadedData else { return }
         isLoading = true
         Task {
             do {
                 let imageData = try await loadImagesFromCache(ids)
                 self.dataSource = imageData
                 self.isLoading = false
+                self.hasLoadedData = true
             } catch(let error) {
                 self.isLoading = false
                 self.isError = true
@@ -84,11 +87,9 @@ extension HomeViewModel: ImageLoadable {
                 return loadedImage ?? UIImage(named: placeholderImage)!
             }
         } catch NetworkError.errorDownloadingImage {
-            throw NetworkError.errorDownloadingImage
             return UIImage(named: placeholderImage) ?? UIImage()
             
         } catch NetworkError.noInternetConnection {
-            throw NetworkError.noInternetConnection
             return UIImage(named: placeholderImage) ?? UIImage()
             
         } catch {

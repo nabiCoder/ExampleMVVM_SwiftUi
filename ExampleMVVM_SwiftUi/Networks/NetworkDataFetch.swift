@@ -10,7 +10,7 @@ final class NetworkDataFetch {
             
             return result
         } catch {
-            throw NetworkError.canNotParseData
+            throw error
         }
     }
 }

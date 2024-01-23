@@ -6,7 +6,7 @@ final class DIContainer {
     
     private init() {}
     
-    private let ids: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    private let ids: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     func provideImageCacheService() -> ImageCacheService {

@@ -12,8 +12,10 @@ struct ContentView: View {
                 ImageGrid(columns: columns, images: viewModel.dataSource)
                     .navigationTitle(Resources.ViewTitles.home)
             }
-            .task {
-                await viewModel.fetchImageDetails()
+            .onAppear {
+                Task {
+                    await viewModel.fetchImageDetails()
+                }
             }
             if viewModel.isLoading {
                 LoadingView()
