@@ -4,4 +4,8 @@ struct Resources {
         static let home = "Home"
         static let detail = "Detail View"
     }
+    
+    struct Images {
+        static let noImage = "noImage"
+    }
 }

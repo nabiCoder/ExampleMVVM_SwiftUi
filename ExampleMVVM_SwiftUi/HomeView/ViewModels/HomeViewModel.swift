@@ -1,5 +1,5 @@
 import Foundation
-import UIKit
+import SwiftUI
 
 protocol ImageLoadable {
     func loadImagesFromCache(_ ids: [Int]) async throws -> [UIImage]
@@ -16,6 +16,7 @@ final class HomeViewModel: ObservableObject {
     
     private var imageCacheService: ImageCacheService
     private let ids: [Int]
+    private let placeholderImage = Resources.Images.noImage
     
     @Published var dataSource: [UIImage]?
     @Published var isLoading = false
@@ -34,15 +35,16 @@ extension HomeViewModel: ImageDetailsFetchable {
     
     func fetchImageDetails() async {
         isLoading = true
-        do {
-            let imageData = try await loadImagesFromCache(ids)
-            
-            self.dataSource = imageData
-            self.isLoading = false
-        } catch(let error) {
-            self.isLoading = false
-            self.isError = true
-            self.errorMassage = error.localizedDescription
+        Task {
+            do {
+                let imageData = try await loadImagesFromCache(ids)
+                self.dataSource = imageData
+                self.isLoading = false
+            } catch(let error) {
+                self.isLoading = false
+                self.isError = true
+                self.errorMassage = error.localizedDescription
+            }
         }
     }
 }
@@ -57,7 +59,7 @@ extension HomeViewModel: ImageLoadable {
         try await withThrowingTaskGroup(of: UIImage.self) { group in
             for id in ids {
                 group.addTask {
-                    return try await self.imageCacheService.loadImage(with: id)
+                    return try await self.loadImageFromCacheOrNetwork(id)
                 }
             }
             
@@ -66,5 +68,31 @@ extension HomeViewModel: ImageLoadable {
             }
         }
         return images
+    }
+    
+    private func loadImageFromCacheOrNetwork(_ id: Int) async throws -> UIImage {
+        do {
+            if let cachedImage =  try await imageCacheService.getCachedImage(id) {
+                return cachedImage
+            } else {
+                let networkResultData = try await NetworkDataFetch.getData(id)
+                let imageUrl = networkResultData.url
+                
+                let imageLoader = ImageLoader(imageUrl: imageUrl)
+                let loadedImage = try await imageLoader.image
+                
+                return loadedImage ?? UIImage(named: placeholderImage)!
+            }
+        } catch NetworkError.errorDownloadingImage {
+            throw NetworkError.errorDownloadingImage
+            return UIImage(named: placeholderImage) ?? UIImage()
+            
+        } catch NetworkError.noInternetConnection {
+            throw NetworkError.noInternetConnection
+            return UIImage(named: placeholderImage) ?? UIImage()
+            
+        } catch {
+            throw error
+        }
     }
 }

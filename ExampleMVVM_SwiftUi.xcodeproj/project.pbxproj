@@ -28,6 +28,7 @@
 		39A14A352B592AAE00AA25BF /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A14A342B592AAE00AA25BF /* ImageCacheService.swift */; };
 		39A14A382B592B9D00AA25BF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 39A14A372B592B9D00AA25BF /* SDWebImage */; };
 		39A14A3A2B592B9D00AA25BF /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 39A14A392B592B9D00AA25BF /* SDWebImageMapKit */; };
+		39B314112B5E98AD00C90F66 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B314102B5E98AD00C90F66 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		39A14A2F2B5928CD00AA25BF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		39A14A312B59299600AA25BF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		39A14A342B592AAE00AA25BF /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		39B314102B5E98AD00C90F66 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				39A14A1E2B59257700AA25BF /* EndPoint.swift */,
 				39A14A202B5925CE00AA25BF /* NetworkError.swift */,
 				39A14A222B59261000AA25BF /* NetworkDataFetch.swift */,
+				39B314102B5E98AD00C90F66 /* ImageLoader.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				39A14A0E2B59216A00AA25BF /* MyApp.swift in Sources */,
 				395938D12B5957F000EABBC6 /* ImageGrid.swift in Sources */,
 				395938CD2B594ECB00EABBC6 /* Resources.swift in Sources */,
+				39B314112B5E98AD00C90F66 /* ImageLoader.swift in Sources */,
 				395938D92B59AF2200EABBC6 /* UIImage + Extension.swift in Sources */,
 				39A14A232B59261000AA25BF /* NetworkDataFetch.swift in Sources */,
 				39A14A352B592AAE00AA25BF /* ImageCacheService.swift in Sources */,

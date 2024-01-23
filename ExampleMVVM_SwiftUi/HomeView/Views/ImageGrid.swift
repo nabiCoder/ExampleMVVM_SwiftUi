@@ -11,7 +11,7 @@ struct ImageGrid: View {
                 NavigationLink(destination: DetailView(image: image)) {
                     ResizableView(image: image)
                 }
-                .id(image.uniqueHash)
+                .id(UUID())
             }
         }
     }
