@@ -9,7 +9,7 @@ struct MyApp: App {
     
     init() {
         columns = diContainer.columns
-        homeViewModel = diContainer.provideHomeViewModel()
+        homeViewModel = diContainer.creatHomeViewModel()
     }
     
     var body: some Scene {

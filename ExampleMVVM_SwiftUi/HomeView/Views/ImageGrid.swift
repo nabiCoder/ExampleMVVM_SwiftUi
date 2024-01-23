@@ -9,10 +9,13 @@ struct ImageGrid: View {
         LazyVGrid(columns: columns) {
             ForEach(images ?? [], id: \.uniqueHash) { image in
                 NavigationLink(destination: DetailView(image: image)) {
-                    ResizableView(image: image)
+                    VStack {
+                        ResizableView(image: image)
+                    }
                 }
                 .id(UUID())
             }
         }
     }
 }
+

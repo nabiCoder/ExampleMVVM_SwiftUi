@@ -14,7 +14,7 @@ struct ContentView: View {
             }
             .onAppear {
                 Task {
-                    await viewModel.fetchImageDetails()
+                    await viewModel.fetchImageDetailsIfNeeded()
                 }
             }
             if viewModel.isLoading {

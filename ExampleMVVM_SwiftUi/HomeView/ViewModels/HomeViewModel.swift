@@ -2,11 +2,11 @@ import Foundation
 import SwiftUI
 
 protocol ImageLoadable {
-    func loadImagesFromCache(_ ids: [Int]) async throws -> [UIImage]
+    func loadImageFromCacheOrNetwork(_ ids: [Int]) async throws -> [UIImage]
 }
 
 protocol ImageDetailsFetchable {
-    func fetchImageDetails() async
+    func fetchImageDetailsIfNeeded() async
 }
 
 // MARK: - HomeViewModel Class
@@ -14,7 +14,8 @@ protocol ImageDetailsFetchable {
 @MainActor
 final class HomeViewModel: ObservableObject {
     
-    private var imageCacheService: ImageCacheService
+    private let imageCacheService: ImageCacheService
+    private let networkManager: NetworkManager
     private let ids: [Int]
     private let placeholderImage = Resources.Images.noImage
     
@@ -24,8 +25,9 @@ final class HomeViewModel: ObservableObject {
     @Published var errorMassage: String?
     @Published var hasLoadedData = false
     
-    init(imageCacheService: ImageCacheService, ids: [Int]) {
+    init(imageCacheService: ImageCacheService, networkManager: NetworkManager, ids: [Int]) {
         self.imageCacheService = imageCacheService
+        self.networkManager = networkManager
         self.ids = ids
     }
 }
@@ -34,19 +36,17 @@ final class HomeViewModel: ObservableObject {
 
 extension HomeViewModel: ImageDetailsFetchable {
     
-    func fetchImageDetails() async {
+    func fetchImageDetailsIfNeeded() async {
         guard !hasLoadedData else { return }
         isLoading = true
         Task {
             do {
-                let imageData = try await loadImagesFromCache(ids)
+                let imageData = try await loadImageFromCacheOrNetwork(ids)
                 self.dataSource = imageData
                 self.isLoading = false
                 self.hasLoadedData = true
             } catch(let error) {
-                self.isLoading = false
-                self.isError = true
-                self.errorMassage = error.localizedDescription
+                handleImageDetailsFetchError(error)
             }
         }
     }
@@ -56,13 +56,15 @@ extension HomeViewModel: ImageDetailsFetchable {
 
 extension HomeViewModel: ImageLoadable {
     
-    func loadImagesFromCache(_ ids: [Int]) async throws -> [UIImage] {
+    func loadImageFromCacheOrNetwork(_ ids: [Int]) async throws -> [UIImage] {
         var images = [UIImage]()
         
         try await withThrowingTaskGroup(of: UIImage.self) { group in
             for id in ids {
                 group.addTask {
-                    return try await self.loadImageFromCacheOrNetwork(id)
+                    let loadedImage = try await self.loadImage(id)
+                    self.imageCacheService.saveImageToCache(loadedImage, forKey: String(id))
+                    return loadedImage
                 }
             }
             
@@ -73,18 +75,18 @@ extension HomeViewModel: ImageLoadable {
         return images
     }
     
-    private func loadImageFromCacheOrNetwork(_ id: Int) async throws -> UIImage {
+    private func loadImage(_ id: Int) async throws -> UIImage {
         do {
             if let cachedImage =  try await imageCacheService.getCachedImage(id) {
                 return cachedImage
             } else {
-                let networkResultData = try await NetworkDataFetch.getData(id)
+                let networkResultData = try await networkManager.getData(id)
                 let imageUrl = networkResultData.url
                 
-                let imageLoader = ImageLoader(imageUrl: imageUrl)
-                let loadedImage = try await imageLoader.image
+                let _ = networkManager.setData(imageUrl: imageUrl)
+                let loadedImage = try await networkManager.image
                 
-                return loadedImage ?? UIImage(named: placeholderImage)!
+                return loadedImage ?? defaultPlaceholderImage()
             }
         } catch NetworkError.errorDownloadingImage {
             return UIImage(named: placeholderImage) ?? UIImage()
@@ -95,5 +97,15 @@ extension HomeViewModel: ImageLoadable {
         } catch {
             throw error
         }
+    }
+    
+    private func defaultPlaceholderImage() -> UIImage {
+        return UIImage(named: placeholderImage) ?? UIImage()
+    }
+    
+    private func handleImageDetailsFetchError(_ error: Error) {
+        self.isLoading = false
+        self.isError = true
+        self.errorMassage = error.localizedDescription
     }
 }

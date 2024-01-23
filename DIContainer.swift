@@ -6,15 +6,21 @@ final class DIContainer {
     
     private init() {}
     
-    private let ids: [Int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    private let ids: [Int] = Array(1...3)
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
-    func provideImageCacheService() -> ImageCacheService {
+    func creatImageCacheService() -> ImageCacheService {
         return ImageCacheService()
     }
     
+    func creatNetworkManager() -> NetworkManager {
+        return NetworkManager()
+    }
+    
     @MainActor 
-    func provideHomeViewModel() -> HomeViewModel {
-        return HomeViewModel(imageCacheService: provideImageCacheService(), ids: ids)
+    func creatHomeViewModel() -> HomeViewModel {
+        return HomeViewModel(imageCacheService: creatImageCacheService(), 
+                             networkManager: creatNetworkManager(),
+                             ids: ids)
     }
 }
